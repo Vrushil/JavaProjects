@@ -18,6 +18,7 @@ public class DemoController {
 		HttpSession session = req.getSession();
 		String name= req.getParameter("name"); 
 		System.out.println("In print function");
+	System.out.println(name);
 	session.setAttribute("name", name);
 		return "home";
 	}
