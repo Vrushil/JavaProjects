@@ -8,8 +8,20 @@
 </head>
 <body>
 
-Hello to home page
 
-Welcome ${name}
-</body>
+<!-- <form action="home">
+Email<input type="text" name="emailid"><br>
+College Name <input type="text" name="college"><br>
+Major <input type="text" name="major"><br>
+GPA <input type="text" name="gpa"><br>
+<input type="submit" value="SUMBIT" onsubmit="welcome">
+</form>
+ -->
+
+<%-- Hello to home page
+
+Welcome ${emailid}
+ --%>
+User 's name is ${name} 
+ </body>
 </html>
