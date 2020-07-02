@@ -9,19 +9,19 @@
 <body>
 
 
-<!-- <form action="home">
-Email<input type="text" name="emailid"><br>
+<form action="student">
+Email<input type="text" name="email"><br>
 College Name <input type="text" name="college"><br>
 Major <input type="text" name="major"><br>
 GPA <input type="text" name="gpa"><br>
-<input type="submit" value="SUMBIT" onsubmit="welcome">
+<input type="submit" value="SUMBIT" >
 </form>
- -->
+
 
 <%-- Hello to home page
 
 Welcome ${emailid}
  --%>
-User 's name is ${name} 
- </body>
+<%-- User 's name is ${name} 
+ --%> </body>
 </html>

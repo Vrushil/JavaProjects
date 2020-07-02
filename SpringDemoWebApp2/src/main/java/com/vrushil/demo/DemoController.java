@@ -15,17 +15,28 @@ import org.springframework.web.servlet.ModelAndView;
 public class DemoController {
 
 	@RequestMapping("home")
-	public ModelAndView home(@RequestParam("name") String name)
-	{
-		
+	public ModelAndView home() {
+
 		System.out.println("In print function");
-ModelAndView mv= new ModelAndView();
-mv.addObject("name",name);
-		/*
-		 * mv.addObject("college",college); mv.addObject("major",major);
-		 * mv.addObject("gpa",gpa);
-		 */
-mv.setViewName("home");
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("home");
+		return mv;
+	}
+
+	@RequestMapping("student")
+	public ModelAndView student(@RequestParam("email") String email,@RequestParam("college") String college,@RequestParam("major") String major,@RequestParam("gpa") String gpa) {
+
+		System.out.println("In student page");
+		ModelAndView mv = new ModelAndView();
+		
+		
+		  mv.addObject("email",email);
+		  
+		  mv.addObject("college",college); mv.addObject("major",major);
+		  mv.addObject("gpa",gpa);
+		 
+		  mv.setViewName("student");
+		 
 		return mv;
 	}
 
