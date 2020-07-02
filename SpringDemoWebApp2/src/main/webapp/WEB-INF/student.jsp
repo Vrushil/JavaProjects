@@ -7,10 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-Student's email : ${email} 
-College name: ${college}
-Major: ${major}
-GPA : ${gpa}
+Student's email : ${student.email} <br>
+College name : ${student.college}<br>
+Major: ${student.major}<br>
+GPA : ${student.gpa}<br>
 
+<br>
+<br>
+<br>
+<br>
+Student record entered into the database
 </body>
 </html>
