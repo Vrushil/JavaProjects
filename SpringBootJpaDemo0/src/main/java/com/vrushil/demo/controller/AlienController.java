@@ -29,7 +29,7 @@ public class AlienController {
 	
 	
 	//After adding jackson databind xml, The client can have acces to json and xml  type of response. This is called as content negotiation
-	@RequestMapping("/aliens") // Rest API type URL
+	@RequestMapping(path= "/aliens",produces = {"application/xml"}) // Rest API type URL; The produces command can produce only the mentioned format of  response. hence if the user tries to get json format , it will report unacceptable
 	@ResponseBody
 	public List<Alien> getAliens()
 	{
