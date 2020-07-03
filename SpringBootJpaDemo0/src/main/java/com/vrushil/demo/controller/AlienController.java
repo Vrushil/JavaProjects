@@ -27,6 +27,8 @@ public class AlienController {
 		return "home";
 	}
 	
+	
+	//After adding jackson databind xml, The client can have acces to json and xml  type of response. This is called as content negotiation
 	@RequestMapping("/aliens") // Rest API type URL
 	@ResponseBody
 	public List<Alien> getAliens()
