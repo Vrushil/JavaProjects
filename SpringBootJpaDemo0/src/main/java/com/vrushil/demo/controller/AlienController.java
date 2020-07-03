@@ -4,8 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,4 +46,18 @@ return repo.findAll(); //fetching records in jSON format
 	{
 return repo.findById(aid); //fetching records s
 	}
+@DeleteMapping("/alien/{aid}")
+public String deleteAlien(@PathVariable("aid")int aid)
+{
+Alien a= repo.getOne(aid);
+repo.delete(a);
+return "deleted";
+}
+@PutMapping(path = "alien", consumes = {"application/json"} ) 
+public Alien updateAlien(@RequestBody Alien alien)
+{
+	repo.save(alien);
+	return alien;
+}
+
 }
