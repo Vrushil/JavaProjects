@@ -1,13 +1,13 @@
 package com.vrushil.demo.controller;
 
-import javax.websocket.server.PathParam;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.vrushil.demo.dao.AlienRepo;
 import com.vrushil.demo.model.Alien;
@@ -29,15 +29,15 @@ public class AlienController {
 	
 	@RequestMapping("/aliens") // Rest API type URL
 	@ResponseBody
-	public String getAliens()
+	public List<Alien> getAliens()
 	{
-return repo.findAll().toString(); //fetching records s
+return repo.findAll(); //fetching records in jSON format
 	}
 	
 	@RequestMapping("/alien/{aid}") // Rest API type URL
 	@ResponseBody
-	public String getAlien( @PathVariable("aid") int aid)
+	public Optional<Alien> getAlien( @PathVariable("aid") int aid)
 	{
-return repo.findById(aid).toString(); //fetching records s
+return repo.findById(aid); //fetching records s
 	}
 }
